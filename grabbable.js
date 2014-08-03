@@ -5,6 +5,7 @@ var Gaffa = require('gaffa'),
 
 function Grabbable(){}
 Grabbable = Gaffa.createSpec(Grabbable, Container);
+Grabbable.prototype._type = 'grabbable';
 Grabbable.prototype.render = function() {
     Container.prototype.render.call(this);
 

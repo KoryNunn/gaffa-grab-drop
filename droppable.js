@@ -5,6 +5,7 @@ var Gaffa = require('gaffa'),
 
 function Droppable(){}
 Droppable = Gaffa.createSpec(Droppable, Container);
+Droppable.prototype._type = 'droppable';
 Droppable.prototype.render = function() {
     Container.prototype.render.call(this);
 
