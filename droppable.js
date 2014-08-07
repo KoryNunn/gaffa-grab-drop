@@ -17,13 +17,13 @@ Droppable.prototype.render = function() {
     droppable.on('drop', function(event){
 
         view.triggerActions('drop', {
-            data: event.grabbable.currentGrab.data
+            data: event.grabbable.currentGrab && event.grabbable.currentGrab.data
         }, event);
 
     }).on('hover', function(event){
 
         view.triggerActions('hover', {
-            data: event.grabbable.currentGrab.data
+            data: event.grabbable.currentGrab && event.grabbable.currentGrab.data
         }, event);
 
     });
