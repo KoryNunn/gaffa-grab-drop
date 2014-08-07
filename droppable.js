@@ -20,6 +20,12 @@ Droppable.prototype.render = function() {
             data: event.grabbable.currentGrab.data
         }, event);
 
+    }).on('hover', function(event){
+
+        view.triggerActions('hover', {
+            data: event.grabbable.currentGrab.data
+        }, event);
+
     });
 };
 
