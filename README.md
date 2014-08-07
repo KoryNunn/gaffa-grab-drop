@@ -1,6 +1,6 @@
 # gaffa-grab-drop
 
-grab and drop views for gaffa
+grab and drop view for gaffa
 
 # usage
 
@@ -10,22 +10,21 @@ install:
 
 require:
 
-    var Grabbable = require('gaffa-grab-drop/grabbable');
-    var Droppable = require('gaffa-grab-drop/droppable');
+    var GrabDrop = require('gaffa-grab-drop');
 
 register:
 
-    gaffa.registerConstructor(Grabbable);
-    gaffa.registerConstructor(Droppable);
+    gaffa.registerConstructor(GrabDrop);
 
 use:
 
-    var grabbable = new Grabbable();
-    grabbable.data.binding = '[something]';
+    var grabDrop1 = new Grabbable();
+    grabDrop1.grabbable.value = true;
+    grabDrop1.data.binding = '[something]';
 
     var doSomething = new actions.Set();
     doSomething.source.binding = 'data'; // From the grabbable
     doSomething.target.binding = '[newPlace]'; // Where to put dropped data
 
-    var droppable = new Droppable();
-    droppable.actions.drop = [doSomething]; // Give action to the droppable to trigger on drop.
+    var grabDrop2 = new Droppable();
+    grabDrop2.actions.drop = [doSomething]; // Give action to the view to trigger on drop.
