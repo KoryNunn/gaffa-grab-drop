@@ -18,12 +18,8 @@ GrabDrop.prototype.render = function() {
         if(!view.grabbable.value){
             return;
         }
+        grab.data = view.data.value;
         this.ghost = this.createGhost();
-
-        grab.on('move', function(){
-            this.data = view.data.value;
-        });
-
     })
     .on('drop', function(position){
         if(!this.ghost){
