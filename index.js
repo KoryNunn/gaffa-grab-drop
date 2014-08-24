@@ -32,6 +32,9 @@ GrabDrop.prototype.render = function() {
     var droppable = grabetha.droppable(element);
 
     droppable.on('drop', function(event){
+        if(!(event.grabbable.currentGrab && event.grabbable.currentGrab.data)){
+            return;
+        }
 
         view.triggerActions('drop', {
             data: event.grabbable.currentGrab && event.grabbable.currentGrab.data
