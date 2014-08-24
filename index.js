@@ -38,6 +38,9 @@ GrabDrop.prototype.render = function() {
         }, event);
 
     }).on('hover', function(event){
+        if(!(event.grabbable.currentGrab && event.grabbable.currentGrab.data)){
+            return;
+        }
 
         view.triggerActions('hover', {
             data: event.grabbable.currentGrab && event.grabbable.currentGrab.data

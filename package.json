@@ -13,7 +13,8 @@
     "gaffa": "^1.14.3",
     "gaffa-container": "^1.0.0",
     "gel-js": "^1.7.1",
-    "grabetha": "^1.1.0"
+    "grabetha": "^1.1.0",
+    "venfix": "^1.1.5"
   },
   "repository": {
     "type": "git",
